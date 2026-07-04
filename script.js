@@ -56,7 +56,7 @@ function set(v,c){fill.style.width=v+"%";fill.style.background=c}
 function hEl(){return document.getElementById("h")}
 function wEl(){return document.getElementById("w")}
 const bmiOut=document.getElementById("bmiOut"),fill=document.getElementById("fill");
-function water(){let w=+ww.value;if(!w)return alert("Enter weight");waterOut.innerHTML=`Drink ${(w*35/1000).toFixed(1)} litres/day`; }
+function water(){let w=+ww.value;if(!w)return alert("Enter weight");waterOut.innerHTML=`Drink atleast ${(w*35/1000).toFixed(1)} litres/day`; }
 function sleepRec(){sleepOut.innerHTML={child:"9-12 hours",teen:"8-10 hours",adult:"7-9 hours"}[age.value]}
 function calories(){
 let a=+ca.value,w=+cw.value,h=+ch.value;
