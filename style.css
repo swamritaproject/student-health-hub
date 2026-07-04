@@ -1,16 +1,179 @@
-*{box-sizing:border-box;font-family:Arial,sans-serif}
-body{margin:0;background:#eef6ff}
-header{background:linear-gradient(135deg,#1976d2,#26c6da);color:#fff;padding:25px;text-align:center}
-.dashboard{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:15px}
-.tile{background:#fff;border-radius:14px;padding:18px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.12);animation:pop .7s}
-.tile i{font-size:28px;color:#1976d2;display:block;margin-bottom:8px}
-.card{background:#fff;margin:15px;border-radius:14px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.12);animation:fade .8s}
-input,select,button{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc}
-button{background:#1976d2;color:#fff;border:none}
-button:hover{background:#125ea8}
-.meter{height:16px;background:#ddd;border-radius:20px;overflow:hidden}
-#fill{height:100%;width:0;background:#4caf50;transition:width .7s,background .7s}
-p{font-weight:bold}
-footer{text-align:center;padding:20px;color:#666}
-@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
-@keyframes pop{0%{transform:scale(.9)}100%{transform:scale(1)}}
+*{
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#eef6ff;
+}
+
+/* Header */
+
+header{
+    background:linear-gradient(135deg,#1976d2,#26c6da);
+    color:#fff;
+    padding:25px;
+    text-align:center;
+}
+
+/* Dashboard */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:15px;
+}
+
+/* Dashboard Tiles */
+
+.tile{
+    background:#fff;
+    border-radius:14px;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    animation:pop .7s;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tile:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.tile:active{
+    transform:scale(.95);
+}
+
+.tile i{
+    font-size:28px;
+    color:#1976d2;
+    display:block;
+    margin-bottom:8px;
+}
+
+/* Cards */
+
+.card{
+    background:#fff;
+    margin:15px;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    animation:fade .8s;
+    transition:.3s;
+}
+
+/* Highlight selected section */
+
+.card:target{
+    animation:highlight 1s;
+}
+
+/* Inputs */
+
+input,
+select,
+button{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+/* Button */
+
+button{
+    background:#1976d2;
+    color:#fff;
+    border:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#125ea8;
+}
+
+/* BMI Meter */
+
+.meter{
+    height:16px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#fill{
+    height:100%;
+    width:0;
+    background:#4caf50;
+    transition:width .7s,background .7s;
+}
+
+/* Text */
+
+p{
+    font-weight:bold;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
+
+/* Animations */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(.9);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes highlight{
+    0%{
+        box-shadow:0 0 40px #00c6ff;
+    }
+    100%{
+        box-shadow:0 4px 12px rgba(0,0,0,.12);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.dashboard{
+    grid-template-columns:repeat(2,1fr);
+}
+
+header h1{
+    font-size:28px;
+}
+
+}
