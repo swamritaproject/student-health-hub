@@ -57,8 +57,29 @@ function hEl(){return document.getElementById("h")}
 function wEl(){return document.getElementById("w")}
 const bmiOut=document.getElementById("bmiOut"),fill=document.getElementById("fill");
 function water(){let w=+ww.value;if(!w)return alert("Enter weight");waterOut.innerHTML=`Drink atleast ${(w*35/1000).toFixed(1)} litres/day`; }
-function sleepRec(){sleepOut.innerHTML={child:"9-12 hours",teen:"8-10 hours",adult:"7-9 hours"}[age.value]}
-function calories(){
+function sleepRec(){
+
+    const ageGroup = document.getElementById("age").value;
+    const sleepOut = document.getElementById("sleepOut");
+
+    let result = "";
+
+    switch(ageGroup){
+        case "child":
+            result = "Recommended Sleep: 9–12 Hours";
+            break;
+
+        case "teen":
+            result = "Recommended Sleep: 8–10 Hours";
+            break;
+
+        case "adult":
+            result = "Recommended Sleep: 7–9 Hours";
+            break;
+    }
+
+    sleepOut.innerHTML = result;
+}function calories(){
 let a=+ca.value,w=+cw.value,h=+ch.value;
 if(!a||!w||!h)return alert("Fill all fields");
 let b=(g.value=="Male")?(10*w+6.25*h-5*a+5):(10*w+6.25*h-5*a-161);
