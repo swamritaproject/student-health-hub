@@ -1,3 +1,33 @@
+function calculateAge(){
+
+let dob=document.getElementById("dob").value;
+
+if(dob==""){
+alert("Please select your Date of Birth");
+return;
+}
+
+let birth=new Date(dob);
+let today=new Date();
+
+let years=today.getFullYear()-birth.getFullYear();
+let months=today.getMonth()-birth.getMonth();
+let days=today.getDate()-birth.getDate();
+
+if(days<0){
+months--;
+days+=30;
+}
+
+if(months<0){
+years--;
+months+=12;
+}
+
+document.getElementById("ageResult").innerHTML=
+`Age : ${years} Years ${months} Months ${days} Days`;
+
+}
 function bmi(){
 let h=+hEl().value/100,w=+wEl().value;
 if(!h||!w)return alert("Enter height & weight");
