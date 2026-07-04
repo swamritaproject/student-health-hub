@@ -1,3 +1,9 @@
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+}
 function calculateAge(){
 
 let dob=document.getElementById("dob").value;
