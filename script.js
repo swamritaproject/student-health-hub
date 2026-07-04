@@ -1,8 +1,16 @@
 function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({
+    const section = document.getElementById(id);
+
+    section.scrollIntoView({
         behavior:"smooth",
         block:"start"
     });
+
+    section.style.boxShadow="0 0 35px #00c6ff";
+
+    setTimeout(()=>{
+        section.style.boxShadow="0 4px 12px rgba(0,0,0,.12)";
+    },1000);
 }
 function calculateAge(){
 
