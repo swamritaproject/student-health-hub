@@ -72,7 +72,7 @@ function sleepRec(){
         sleepOut.innerHTML="Recommended Sleep: 7–9 Hours";
     }
 }
-}function calories(){
+function calories(){
 let a=+ca.value,w=+cw.value,h=+ch.value;
 if(!a||!w||!h)return alert("Fill all fields");
 let b=(g.value=="Male")?(10*w+6.25*h-5*a+5):(10*w+6.25*h-5*a-161);
