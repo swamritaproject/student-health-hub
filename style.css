@@ -177,3 +177,11 @@ header h1{
 }
 
 }
+.input-label{
+    display:block;
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:600;
+    color:#1976d2;
+    letter-spacing:.5px;
+}
