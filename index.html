@@ -8,10 +8,27 @@
 <header><h1><i class="fa-solid fa-heart-pulse"></i> Student Health Hub</h1><p>Healthy Students, Healthy Future</p></header>
 
 <section class="dashboard">
-<div class="tile"><i class="fa-solid fa-weight-scale"></i><span>BMI</span></div>
-<div class="tile"><i class="fa-solid fa-glass-water"></i><span>Water</span></div>
-<div class="tile"><i class="fa-solid fa-bed"></i><span>Sleep</span></div>
-<div class="tile"><i class="fa-solid fa-fire"></i><span>Calories</span></div>
+
+<div class="tile" onclick="scrollToSection('bmi')">
+<i class="fa-solid fa-weight-scale"></i>
+<span>BMI</span>
+</div>
+
+<div class="tile" onclick="scrollToSection('water')">
+<i class="fa-solid fa-glass-water"></i>
+<span>Water</span>
+</div>
+
+<div class="tile" onclick="scrollToSection('sleep')">
+<i class="fa-solid fa-bed"></i>
+<span>Sleep</span>
+</div>
+
+<div class="tile" onclick="scrollToSection('calories')">
+<i class="fa-solid fa-fire"></i>
+<span>Calories</span>
+</div>
+
 </section>
 
 <div class="card">
@@ -23,7 +40,7 @@ Calculate Age
 <p id="ageResult"></p>
 </div>
 
-<div class="card">
+<div class="card" id="bmi">
 <h2>BMI Calculator</h2>
 <input id="h" type="number" placeholder="Height (cm)">
 <input id="w" type="number" placeholder="Weight (kg)">
@@ -32,14 +49,14 @@ Calculate Age
 <p id="bmiOut"></p>
 </div>
 
-<div class="card">
+<div class="card" id="water">
 <h2>Water Intake</h2>
 <input id="ww" type="number" placeholder="Weight (kg)">
 <button onclick="water()">Calculate</button>
 <p id="waterOut"></p>
 </div>
 
-<div class="card">
+<div class="card" id="sleep">
 <h2>Sleep Recommendation</h2>
 <select id="age">
 <option value="child">5-12 Years</option>
@@ -50,7 +67,7 @@ Calculate Age
 <p id="sleepOut"></p>
 </div>
 
-<div class="card">
+<div class="card" id="calories">
 <h2>Calories Requirement</h2>
 <input id="ca" type="number" placeholder="Age">
 <select id="g"><option>Male</option><option>Female</option></select>
