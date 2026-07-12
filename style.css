@@ -1,94 +1,93 @@
 /* Student Health Hub — style.css */
 
 /* ---------- Dashboard Tiles ---------- */
-
 .dashboard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 18px;
+  gap: 16px;
+  padding: 20px;
 }
 
 .tile {
-  background: linear-gradient(145deg, #fff, #f4f9ff);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 26px 18px 22px;
   text-align: center;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: 0.35s;
+  transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
-  animation: fade 0.5s;
+  animation: fade .5s both;
 }
 
-.tile::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-}
+.tile:nth-child(1) { animation-delay: .05s; }
+.tile:nth-child(2) { animation-delay: .1s; }
+.tile:nth-child(3) { animation-delay: .15s; }
+.tile:nth-child(4) { animation-delay: .2s; }
 
-.tile:nth-child(1)::before { background: linear-gradient(90deg, #42a5f5, #1976d2); }
-.tile:nth-child(2)::before { background: linear-gradient(90deg, #26c6da, #00bfa5); }
-.tile:nth-child(3)::before { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
-.tile:nth-child(4)::before { background: linear-gradient(90deg, #ffa726, #ef6c00); }
+.tile:hover { transform: translateY(-6px); }
+.tile:nth-child(1):hover { box-shadow: 0 14px 28px rgba(25,118,210,.28); }
+.tile:nth-child(2):hover { box-shadow: 0 14px 28px rgba(0,191,165,.28); }
+.tile:nth-child(3):hover { box-shadow: 0 14px 28px rgba(142,36,170,.28); }
+.tile:nth-child(4):hover { box-shadow: 0 14px 28px rgba(251,140,0,.28); }
 
-.tile:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-}
+.tile:active { transform: scale(.96); }
 
-.tile:active {
-  transform: scale(0.96);
-}
-
+/* Icon badge (circular, gradient-filled) */
 .tile i {
-  font-size: 32px;
-  margin-bottom: 10px;
-  display: block;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  color: #fff;
+  transition: transform var(--transition-fast);
 }
 
-.tile:nth-child(1) i { color: #1976d2; }
-.tile:nth-child(2) i { color: #00bfa5; }
-.tile:nth-child(3) i { color: #8e24aa; }
-.tile:nth-child(4) i { color: #fb8c00; }
+.tile:hover i { transform: scale(1.1) rotate(-4deg); }
+
+.tile:nth-child(1) i { background: linear-gradient(135deg, #42a5f5, #1976d2); }
+.tile:nth-child(2) i { background: linear-gradient(135deg, #26c6da, #00bfa5); }
+.tile:nth-child(3) i { background: linear-gradient(135deg, #ab47bc, #7b1fa2); }
+.tile:nth-child(4) i { background: linear-gradient(135deg, #ffa726, #ef6c00); }
 
 .tile span {
-  font-size: 16px;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 700;
   color: #263238;
 }
 
 /* ---------- Meter (BMI bar) ---------- */
-
 .meter {
   height: 16px;
   background: #e5edf7;
   border-radius: 30px;
   overflow: hidden;
   margin-top: 18px;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,.08);
 }
 
 #fill {
   height: 100%;
   width: 0;
   background: linear-gradient(90deg, #4caf50, #81c784);
-  transition: width 0.6s ease;
+  transition: width .6s ease;
 }
 
 /* ---------- Highlight Card ---------- */
-
 .card.highlight {
-  box-shadow: 0 0 25px rgba(38, 198, 218, 0.5);
+  box-shadow: 0 0 28px rgba(38,198,218,.45);
 }
 
 /* ---------- Input Label ---------- */
-
 .input-label {
   display: block;
   font-weight: 600;
@@ -97,11 +96,10 @@
 }
 
 /* ---------- Floating Action Button ---------- */
-
 .fab {
   position: fixed;
-  bottom: 22px;
-  right: 22px;
+  bottom: 24px;
+  right: 24px;
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -112,14 +110,11 @@
   box-shadow: var(--shadow-lg);
   cursor: pointer;
   z-index: 9999;
-  transition: 0.35s;
+  transition: transform var(--transition);
 }
 
-.fab:hover {
-  transform: scale(1.1) rotate(8deg);
-}
+.fab:hover { transform: scale(1.1) rotate(8deg); }
 
-.fab i,
 .fab span {
   color: #fff;
   font-size: 28px;
@@ -127,35 +122,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(-1px); /* nudges emoji optical center */
+  transform: translateY(-1px);
 }
-/* reserve space so the fab never overlaps the last card's inputs */
-body {
-  padding-bottom: 100px;
+
+/* fab clearance — index page only; overrides theme.css footer padding-bottom
+   (no longer stacked with a separate body padding, so the gap is a single,
+   correctly-sized 90px instead of 130px+) */
+footer {
+  padding-bottom: 90px;
 }
 
 /* ---------- Mobile ---------- */
-
 @media (max-width: 700px) {
-  .dashboard {
-    gap: 12px;
-  }
-
-  .tile {
-    padding: 18px;
-  }
-
-  .tile i {
-    font-size: 26px;
-  }
-
-  .fab {
-    width: 56px;
-    height: 56px;
-  }
-
-  .fab i,
-  .fab span {
-    font-size: 24px;
-  }
+  .dashboard { gap: 12px; }
+  .tile { padding: 20px 14px; }
+  .tile i { width: 46px; height: 46px; font-size: 20px; }
+  .fab { width: 56px; height: 56px; }
+  .fab span { font-size: 24px; }
 }
