@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nutrition Explorer</title>
+
+<link rel="stylesheet" href="nutrition.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+
+<i class="fa-solid fa-bowl-food"></i>
+
+Indian Food Nutrition Explorer
+
+</h1>
+
+<p>
+
+Know the nutritional value of common Indian foods
+
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>
+
+🔍 Search Food
+
+</h2>
+
+<input
+type="text"
+id="search"
+placeholder="Example : Egg, Rice, Chicken..."
+onkeyup="searchFood()">
+
+</div>
+
+<div class="card">
+
+<h2>
+
+📂 Category
+
+</h2>
+
+<select id="category" onchange="filterCategory()">
+
+<option value="all">
+
+All Foods
+
+</option>
+
+<option value="protein">
+
+Protein Foods
+
+</option>
+
+<option value="grain">
+
+Rice & Cereals
+
+</option>
+
+<option value="pulse">
+
+Dal & Pulses
+
+</option>
+
+<option value="vegetable">
+
+Vegetables
+
+</option>
+
+<option value="fruit">
+
+Fruits
+
+</option>
+
+<option value="dairy">
+
+Milk Products
+
+</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+🍽 Food List
+
+</h2>
+
+<div id="foodList">
+
+</div>
+
+</div>
+
+<div class="card" id="details">
+
+<h2>
+
+📊 Nutrition Information
+
+</h2>
+
+<div id="nutrition">
+
+<p>
+
+Select any food to view details.
+
+</p>
+
+</div>
+
+</div>
+
+<a href="index.html" class="back">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Home
+
+</a>
+
+</div>
+
+<script src="nutrition.js"></script>
+
+</body>
+
+</html>
