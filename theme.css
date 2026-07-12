@@ -1,82 +1,104 @@
-/* ---------- Design Tokens ---------- */
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
+/* ---------- Design Tokens ---------- */
 :root {
   --color-primary: #1976d2;
   --color-primary-light: #26c6da;
-  --color-bg: #eef6ff;
-  --color-surface: #ffffff;
-  --color-text: #2b2f33;
-  --color-text-muted: #666;
-  --color-border: #d0d7de;
 
-  --radius-lg: 18px;
-  --radius-md: 12px;
+  --color-bg-start: #eaf3ff;
+  --color-bg-mid: #e6f7fb;
+  --color-bg-end: #f3eefc;
 
-  --shadow-sm: 0 4px 12px rgba(25, 45, 70, 0.08);
-  --shadow-md: 0 8px 20px rgba(25, 45, 70, 0.10);
-  --shadow-lg: 0 10px 28px rgba(25, 45, 70, 0.14);
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-text: #202733;
+  --color-text-muted: #64707c;
+  --color-border: rgba(210, 220, 235, 0.6);
 
-  --space-sm: 12px;
-  --space-md: 20px;
-  --space-lg: 28px;
+  --radius-lg: 22px;
+  --radius-md: 14px;
 
-  --transition: 0.25s ease;
+  --shadow-sm: 0 6px 18px rgba(25, 45, 70, 0.08), 0 1px 2px rgba(25,45,70,0.05);
+  --shadow-md: 0 14px 30px rgba(25, 45, 70, 0.12), 0 2px 6px rgba(25,45,70,0.06);
+  --shadow-lg: 0 18px 40px rgba(25, 45, 70, 0.18);
+
+  --space-sm: 14px;
+  --space-md: 22px;
+  --space-lg: 32px;
+
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+  --transition-fast: 0.18s ease;
+
+  --font-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
 }
 
 /* ---------- Global ---------- */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--color-bg);
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--color-bg-start), var(--color-bg-mid) 45%, var(--color-bg-end));
+  background-attachment: fixed;
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- Header ---------- */
+h1, h2, h3 { font-family: var(--font-heading); }
 
+/* ---------- Header ---------- */
 header {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   text-align: center;
-  padding: 32px 20px;
+  padding: 40px 20px 36px;
   box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.25), transparent 60%);
+  pointer-events: none;
 }
 
 header h1 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
 }
 
 header p {
   opacity: 0.92;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 14.5px;
+  letter-spacing: 0.01em;
 }
 
 /* ---------- Container ---------- */
-
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: var(--space-md);
 }
 
-/* ---------- Cards ---------- */
-
+/* ---------- Cards (glass) ---------- */
 .card {
   background: var(--color-surface);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin: var(--space-sm) 0 var(--space-md);
@@ -85,57 +107,52 @@ header p {
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
 .section-title {
+  font-family: var(--font-heading);
   color: var(--color-primary);
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 12px;
+  font-size: 21px;
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .subtitle {
   color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ---------- Inputs ---------- */
-
-input,
-select,
-button {
+input, select, button {
   width: 100%;
-  padding: 13px 14px;
+  padding: 14px 16px;
   border-radius: var(--radius-md);
   font-size: 15px;
-  font-family: inherit;
+  font-family: var(--font-body);
 }
 
-input,
-select {
+input, select {
   border: 1px solid var(--color-border);
   margin-top: 10px;
-  background: var(--color-surface);
+  background: rgba(255,255,255,0.85);
   color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-input:focus,
-select:focus {
+input:focus, select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.12);
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.14);
 }
 
-input::placeholder {
-  color: #9aa4ad;
-}
+input::placeholder { color: #9aa4ad; }
 
-/* ---------- Buttons ---------- */
-
+/* ---------- Buttons (with shine sweep) ---------- */
 button {
   margin-top: var(--space-sm);
   border: none;
@@ -143,21 +160,32 @@ button {
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+button:hover::after { left: 130%; }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(25, 118, 210, 0.3);
+  box-shadow: 0 10px 22px rgba(25, 118, 210, 0.35);
 }
 
-button:active {
-  transform: translateY(0);
-}
+button:active { transform: translateY(0) scale(0.98); }
 
 /* ---------- Footer ---------- */
-
 footer {
   text-align: center;
   padding: var(--space-lg) var(--space-md);
@@ -166,7 +194,6 @@ footer {
 }
 
 /* ---------- Back Button ---------- */
-
 .back {
   display: inline-block;
   margin-top: var(--space-md);
@@ -174,37 +201,20 @@ footer {
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
+  transition: opacity var(--transition-fast);
 }
 
-.back:hover {
-  text-decoration: underline;
-}
+.back:hover { opacity: 0.7; }
 
 /* ---------- Animations ---------- */
-
 @keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
 }
 
 /* ---------- Mobile ---------- */
-
 @media (max-width: 700px) {
-  header h1 {
-    font-size: 22px;
-  }
-
-  header p {
-    font-size: 13px;
-  }
-
-  .card {
-    padding: var(--space-sm);
-  }
+  header h1 { font-size: 24px; }
+  header p { font-size: 13px; }
+  .card { padding: var(--space-sm); }
 }
