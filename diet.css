@@ -1,128 +1,117 @@
-/* Nutrition Summary Cards */
+/* ---------- Nutrition Summary Cards ---------- */
 
-.stats{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin:20px 0;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: var(--space-md) 0;
 }
 
-.stat{
-padding:20px;
-border-radius:18px;
-color:white;
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-transition:.3s;
+.stat {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition);
 }
 
-.stat:hover{
-transform:translateY(-4px);
+.stat:hover {
+  transform: translateY(-4px);
 }
 
-.stat h3{
-margin:10px 0 5px;
-font-size:24px;
+.stat h3 {
+  margin: 10px 0 4px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.stat p{
-font-size:14px;
-opacity:.95;
+.stat p {
+  font-size: 13px;
+  opacity: 0.9;
 }
 
-.orange{
-background:linear-gradient(135deg,#ff9800,#ff5722);
+.orange { background: linear-gradient(135deg, #ff9800, #ff5722); }
+.blue   { background: linear-gradient(135deg, #2196f3, #1565c0); }
+.green  { background: linear-gradient(135deg, #4caf50, #2e7d32); }
+.purple { background: linear-gradient(135deg, #9c27b0, #6a1b9a); }
+
+/* ---------- Recommended Foods ---------- */
+
+.foods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: var(--space-md);
 }
 
-.blue{
-background:linear-gradient(135deg,#2196f3,#1565c0);
+.food {
+  background: var(--color-surface);
+  border: 2px solid #d7ecff;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
-.green{
-background:linear-gradient(135deg,#4caf50,#2e7d32);
+.food:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
+  background: #f8fcff;
 }
 
-.purple{
-background:linear-gradient(135deg,#9c27b0,#6a1b9a);
+/* ---------- Nutrition Explorer CTA ---------- */
+
+.nutritionCard {
+  margin-top: var(--space-lg);
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #00b09b, var(--color-primary));
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition);
 }
 
-/* Recommended Foods */
-
-.foods{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-margin-top:20px;
+.nutritionCard:hover {
+  transform: translateY(-5px);
 }
 
-.food{
-background:#fff;
-border:2px solid #d7ecff;
-border-radius:16px;
-padding:16px;
-text-align:center;
-font-weight:bold;
-transition:.3s;
-box-shadow:0 5px 12px rgba(0,0,0,.08);
+.nutritionCard h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
 }
 
-.food:hover{
-transform:translateY(-4px);
-border-color:#26c6da;
-background:#f8fcff;
+.nutritionCard p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-weight: 400;
 }
 
-/* Nutrition Explorer */
-
-.nutritionCard{
-margin-top:25px;
-padding:22px;
-border-radius:20px;
-background:linear-gradient(135deg,#00b09b,#1976d2);
-color:white;
-cursor:pointer;
-box-shadow:0 10px 25px rgba(0,0,0,.18);
-transition:.35s;
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--color-primary);
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
 }
 
-.nutritionCard:hover{
-transform:translateY(-5px);
-}
+/* ---------- Mobile ---------- */
 
-.nutritionCard h2{
-margin-bottom:12px;
-font-size:24px;
-color:white;
-}
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
 
-.nutritionCard p{
-line-height:1.7;
-margin-bottom:18px;
-font-weight:normal;
-}
-
-.exploreBtn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-background:white;
-color:#1976d2;
-padding:12px 22px;
-border-radius:30px;
-font-weight:bold;
-box-shadow:0 5px 12px rgba(0,0,0,.12);
-}
-
-/* Mobile */
-
-@media(max-width:700px){
-
-.stats{
-grid-template-columns:1fr;
-}
-
-.foods{
-grid-template-columns:1fr;
-}
-
+  .foods {
+    grid-template-columns: 1fr;
+  }
 }
