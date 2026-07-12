@@ -1,7 +1,6 @@
 const plans = {
 
 child:{
-
 calories:"1200–1700 kcal",
 protein:"60 g",
 carbs:"175 g",
@@ -16,11 +15,9 @@ foods:[
 "🍚 Rice",
 "🫘 Moong Dal"
 ]
-
 },
 
 teen:{
-
 calories:"2000–2400 kcal",
 protein:"65 g",
 carbs:"300 g",
@@ -35,11 +32,9 @@ foods:[
 "🥚 Egg",
 "🫘 Dal"
 ]
-
 },
 
 male:{
-
 calories:"2400–3000 kcal",
 protein:"70 g",
 carbs:"400 g",
@@ -54,11 +49,9 @@ foods:[
 "🥦 Broccoli",
 "🍚 Rice"
 ]
-
 },
 
 female:{
-
 calories:"1800–2400 kcal",
 protein:"58 g",
 carbs:"300 g",
@@ -73,16 +66,14 @@ foods:[
 "🥚 Egg",
 "🍚 Rice"
 ]
-
 },
 
 senior:{
-
 calories:"1700–2200 kcal",
 protein:"60 g",
 carbs:"250 g",
 fat:"55 g",
-water:"2.5 L",
+water:"2.5–3 L",
 
 foods:[
 "🍲 Vegetable Soup",
@@ -92,7 +83,6 @@ foods:[
 "🫘 Dal",
 "🍎 Apple"
 ]
-
 }
 
 };
@@ -100,98 +90,83 @@ foods:[
 function showPlan(){
 
 const group=document.getElementById("grp").value;
-
 const d=plans[group];
 
 document.getElementById("out").innerHTML=`
 
-<table>
+<h2 class="section-title">
+📊 Daily Nutrition
+</h2>
 
-<tr>
+<div class="stats">
 
-<th>Nutrient</th>
+<div class="stat orange">
+🔥
+<h3>${d.calories}</h3>
+<p>Calories</p>
+</div>
 
-<th>Requirement</th>
+<div class="stat blue">
+💪
+<h3>${d.protein}</h3>
+<p>Protein</p>
+</div>
 
-</tr>
+<div class="stat green">
+💧
+<h3>${d.water}</h3>
+<p>Water</p>
+</div>
 
-<tr>
+<div class="stat purple">
+🥑
+<h3>${d.fat}</h3>
+<p>Fat</p>
+</div>
 
-<td>Calories</td>
+</div>
 
-<td>${d.calories}</td>
-
-</tr>
-
-<tr>
-
-<td>Protein</td>
-
-<td>${d.protein}</td>
-
-</tr>
-
-<tr>
-
-<td>Carbohydrates</td>
-
-<td>${d.carbs}</td>
-
-</tr>
-
-<tr>
-
-<td>Fat</td>
-
-<td>${d.fat}</td>
-
-</tr>
-
-<tr>
-
-<td>Water</td>
-
-<td>${d.water}</td>
-
-</tr>
-
-</table>
-
-<h3>🥗 Recommended Foods</h3>
+<h2 class="section-title">
+🥗 Recommended Foods
+</h2>
 
 <div class="foods">
 
-${d.foods.map(food=>`<div class="food">${food}</div>`).join("")}
+${d.foods.map(food=>`
+<div class="food">
+${food}
+</div>
+`).join("")}
 
 </div>
-
-<p>
-
-<b>Reference:</b>
-
-Educational values adapted from ICMR–NIN and WHO dietary guidance.
-
-</p>
 
 <div class="nutritionCard"
-
 onclick="window.location.href='nutrition.html'">
 
-<div>
-
-<h2>🥗 Food Nutrition Explorer</h2>
+<h2>
+🥗 Food Nutrition Explorer
+</h2>
 
 <p>
-
-Search nutrition values of more than 60 Indian foods.
-
+Explore detailed nutrition information for
+<b>60+ common Indian foods</b>, including calories,
+protein, carbohydrates, fats, vitamins,
+minerals and health benefits.
 </p>
 
-</div>
+<div class="exploreBtn">
 
+Explore Now
 <i class="fa-solid fa-arrow-right"></i>
 
 </div>
+
+</div>
+
+<p style="margin-top:18px;color:#666;font-size:14px;">
+<b>Reference:</b>
+Educational values adapted from ICMR–NIN and WHO dietary guidance.
+</p>
 
 `;
 
