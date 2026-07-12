@@ -16,85 +16,89 @@
     <p>Healthy Students, Healthy Future</p>
   </header>
 
-  <section class="dashboard">
-    <div class="tile" onclick="scrollToSection('bmi')">
-      <i class="fa-solid fa-weight-scale"></i>
-      <span>BMI</span>
+  <div class="container">
+
+    <section class="dashboard">
+      <div class="tile" onclick="scrollToSection('bmi')">
+        <i class="fa-solid fa-weight-scale"></i>
+        <span>BMI</span>
+      </div>
+
+      <div class="tile" onclick="scrollToSection('water')">
+        <i class="fa-solid fa-glass-water"></i>
+        <span>Water</span>
+      </div>
+
+      <div class="tile" onclick="scrollToSection('sleep')">
+        <i class="fa-solid fa-bed"></i>
+        <span>Sleep</span>
+      </div>
+
+      <div class="tile" onclick="scrollToSection('calories')">
+        <i class="fa-solid fa-fire"></i>
+        <span>Calories</span>
+      </div>
+    </section>
+
+    <div class="card" id="age">
+      <h2>Age Calculator</h2>
+      <label for="dob" class="input-label">Date of Birth</label>
+      <input type="date" id="dob">
+      <button onclick="calculateAge()">Calculate Age</button>
+      <p id="ageResult"></p>
     </div>
 
-    <div class="tile" onclick="scrollToSection('water')">
-      <i class="fa-solid fa-glass-water"></i>
-      <span>Water</span>
+    <div class="card" id="bmi">
+      <h2>BMI Calculator</h2>
+      <input id="h" type="number" placeholder="Height (cm)">
+      <input id="w" type="number" placeholder="Weight (kg)">
+      <button onclick="bmi()">Calculate</button>
+      <div class="meter"><div id="fill"></div></div>
+      <p id="bmiOut"></p>
     </div>
 
-    <div class="tile" onclick="scrollToSection('sleep')">
-      <i class="fa-solid fa-bed"></i>
-      <span>Sleep</span>
+    <div class="card" id="water">
+      <h2>Water Intake</h2>
+      <input id="ww" type="number" placeholder="Weight (kg)">
+      <button onclick="water()">Calculate</button>
+      <p id="waterOut"></p>
     </div>
 
-    <div class="tile" onclick="scrollToSection('calories')">
-      <i class="fa-solid fa-fire"></i>
-      <span>Calories</span>
+    <div class="card" id="sleep">
+      <h2>Sleep Recommendation</h2>
+      <select id="sleepAge">
+        <option value="child">5-12 Years</option>
+        <option value="teen">13-18 Years</option>
+        <option value="adult">18+ Years</option>
+      </select>
+      <button onclick="sleepRec()">Check</button>
+      <p id="sleepOut"></p>
     </div>
-  </section>
 
-  <div class="card" id="age">
-    <h2>Age Calculator</h2>
-    <label for="dob" class="input-label">Date of Birth</label>
-    <input type="date" id="dob">
-    <button onclick="calculateAge()">Calculate Age</button>
-    <p id="ageResult"></p>
-  </div>
+    <div class="card" id="calories">
+      <h2>Calories Requirement</h2>
+      <input id="ca" type="number" placeholder="Age">
+      <select id="g">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <input id="cw" type="number" placeholder="Weight (kg)">
+      <input id="ch" type="number" placeholder="Height (cm)">
+      <button onclick="calories()">Estimate</button>
+      <p id="calOut"></p>
+    </div>
 
-  <div class="card" id="bmi">
-    <h2>BMI Calculator</h2>
-    <input id="h" type="number" placeholder="Height (cm)">
-    <input id="w" type="number" placeholder="Weight (kg)">
-    <button onclick="bmi()">Calculate</button>
-    <div class="meter"><div id="fill"></div></div>
-    <p id="bmiOut"></p>
-  </div>
+    <div class="card">
+      <h2>Healthy Tips</h2>
+      <ul>
+        <li>Drink enough water.</li>
+        <li>Sleep 8–10 hours.</li>
+        <li>Exercise daily.</li>
+        <li>Eat fruits and vegetables.</li>
+        <li>Limit junk food.</li>
+      </ul>
+    </div>
 
-  <div class="card" id="water">
-    <h2>Water Intake</h2>
-    <input id="ww" type="number" placeholder="Weight (kg)">
-    <button onclick="water()">Calculate</button>
-    <p id="waterOut"></p>
-  </div>
-
-  <div class="card" id="sleep">
-    <h2>Sleep Recommendation</h2>
-    <select id="sleepAge">
-      <option value="child">5-12 Years</option>
-      <option value="teen">13-18 Years</option>
-      <option value="adult">18+ Years</option>
-    </select>
-    <button onclick="sleepRec()">Check</button>
-    <p id="sleepOut"></p>
-  </div>
-
-  <div class="card" id="calories">
-    <h2>Calories Requirement</h2>
-    <input id="ca" type="number" placeholder="Age">
-    <select id="g">
-      <option>Male</option>
-      <option>Female</option>
-    </select>
-    <input id="cw" type="number" placeholder="Weight (kg)">
-    <input id="ch" type="number" placeholder="Height (cm)">
-    <button onclick="calories()">Estimate</button>
-    <p id="calOut"></p>
-  </div>
-
-  <div class="card">
-    <h2>Healthy Tips</h2>
-    <ul>
-      <li>Drink enough water.</li>
-      <li>Sleep 8–10 hours.</li>
-      <li>Exercise daily.</li>
-      <li>Eat fruits and vegetables.</li>
-      <li>Limit junk food.</li>
-    </ul>
   </div>
 
   <footer>Developed by Swamrita</footer>
