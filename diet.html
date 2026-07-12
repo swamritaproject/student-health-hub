@@ -1,92 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Planner</title>
 
-<title>Diet Planner</title>
-
-<link rel="stylesheet" href="diet.css">
-<link rel="stylesheet" href="theme.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <link rel="stylesheet" href="diet.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-<header>
+  <header>
+    <h1><i class="fa-solid fa-utensils"></i> Diet Planner</h1>
+    <p>Balanced Nutrition Guide</p>
+  </header>
 
-<h1>
-<i class="fa-solid fa-utensils"></i>
-Diet Planner
-</h1>
+  <div class="card">
+    <h2 class="section-title"><i class="fa-solid fa-user"></i> Select Age Group</h2>
+    <p class="subtitle">Choose your age group to generate a recommended daily nutrition plan.</p>
 
-<p>
-Balanced Nutrition Guide
-</p>
+    <select id="grp">
+      <option value="child">👦 Children (4–10 Years)</option>
+      <option value="teen">🧒 Teen (11–18 Years)</option>
+      <option value="male">👨 Adult Male</option>
+      <option value="female">👩 Adult Female</option>
+      <option value="senior">🧓 Senior Citizen</option>
+    </select>
 
-</header>
+    <button onclick="showPlan()">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Diet Plan
+    </button>
 
-<div class="card">
+    <div id="out"></div>
 
-<h2 class="section-title">
-<i class="fa-solid fa-user"></i>
-Select Age Group
-</h2>
+    <a class="back" href="index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+  </div>
 
-<p class="subtitle">
-Choose your age group to generate a recommended daily nutrition plan.
-</p>
+  <footer>
+    <p>© Swamrita</p>
+  </footer>
 
-<select id="grp">
-
-<option value="child">
-👦 Children (4–10 Years)
-</option>
-
-<option value="teen">
-🧒 Teen (11–18 Years)
-</option>
-
-<option value="male">
-👨 Adult Male
-</option>
-
-<option value="female">
-👩 Adult Female
-</option>
-
-<option value="senior">
-🧓 Senior Citizen
-</option>
-
-</select>
-
-<button onclick="showPlan()">
-<i class="fa-solid fa-wand-magic-sparkles"></i>
-Generate Diet Plan
-</button>
-
-<div id="out"></div>
-
-<a class="back" href="index.html">
-<i class="fa-solid fa-arrow-left"></i>
-Back to Home
-</a>
-
-</div>
-
-<footer>
-
-<p>
-© Student Health Hub
-</footer>
-
-<script src="diet.js"></script>
-
+  <script src="diet.js"></script>
 </body>
-
 </html>
