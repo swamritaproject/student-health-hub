@@ -1,173 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Explorer</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Nutrition Explorer</title>
-
-<link rel="stylesheet" href="nutrition.css">
-<link rel="stylesheet" href="theme.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <link rel="stylesheet" href="nutrition.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-<header>
+  <header>
+    <div class="header-content">
+      <h1><i class="fa-solid fa-bowl-food"></i> Indian Food Nutrition Explorer</h1>
+      <p>Search nutritional information for common Indian foods</p>
+    </div>
+  </header>
 
-<div class="header-content">
+  <div class="container">
 
-<h1>
-<i class="fa-solid fa-bowl-food"></i>
-Indian Food Nutrition Explorer
-</h1>
+    <!-- Search -->
+    <div class="card">
+      <h2>🔍 Search Food</h2>
+      <input type="text" id="search" placeholder="Search food..." onkeyup="searchFood()">
+    </div>
 
-<p>
-Search nutritional information for common Indian foods
-</p>
+    <!-- Category -->
+    <div class="card">
+      <h2>📂 Category</h2>
+      <select id="category" onchange="filterCategory()">
+        <option value="all">All Foods</option>
+        <option value="protein">🥩 Protein</option>
+        <option value="grain">🌾 Grains</option>
+        <option value="pulse">🫘 Pulses</option>
+        <option value="vegetable">🥬 Vegetables</option>
+        <option value="fruit">🍎 Fruits</option>
+        <option value="dairy">🥛 Dairy</option>
+        <option value="nuts">🥜 Nuts</option>
+      </select>
+    </div>
 
-</div>
+    <!-- Food List -->
+    <div class="card">
+      <h2>🍽 Food List</h2>
+      <div id="foodList" class="food-grid"></div>
+    </div>
 
-</header>
+    <!-- Nutrition Details -->
+    <div class="card">
+      <h2>📊 Nutrition Details</h2>
+      <div id="nutrition">
+        <div class="empty">
+          <i class="fa-solid fa-seedling"></i>
+          <p>Select a food to view its nutritional information.</p>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
+    <!-- Facts -->
+    <div class="card">
+      <h2>💡 Did You Know?</h2>
+      <p id="fact">Eggs contain all 9 essential amino acids.</p>
+    </div>
 
-<!-- Search -->
+    <a href="diet.html" class="back">
+      <i class="fa-solid fa-arrow-left"></i> Back to Diet Planner
+    </a>
 
-<div class="card">
+  </div>
 
-<h2>
-🔍 Search Food
-</h2>
+  <footer>Developed by Swamrita</footer>
 
-<input
-type="text"
-id="search"
-placeholder="Search food..."
-onkeyup="searchFood()">
-
-</div>
-
-<!-- Category -->
-
-<div class="card">
-
-<h2>
-📂 Category
-</h2>
-
-<select id="category" onchange="filterCategory()">
-
-<option value="all">
-All Foods
-</option>
-
-<option value="protein">
-🥩 Protein
-</option>
-
-<option value="grain">
-🌾 Grains
-</option>
-
-<option value="pulse">
-🫘 Pulses
-</option>
-
-<option value="vegetable">
-🥬 Vegetables
-</option>
-
-<option value="fruit">
-🍎 Fruits
-</option>
-
-<option value="dairy">
-🥛 Dairy
-</option>
-
-<option value="nuts">
-🥜 Nuts
-</option>
-
-</select>
-
-</div>
-
-<!-- Food List -->
-
-<div class="card">
-
-<h2>
-🍽 Food List
-</h2>
-
-<div id="foodList" class="food-grid">
-
-</div>
-
-</div>
-
-<!-- Nutrition Details -->
-
-<div class="card">
-
-<h2>
-📊 Nutrition Details
-</h2>
-
-<div id="nutrition">
-
-<div class="empty">
-
-<i class="fa-solid fa-seedling"></i>
-
-<p>
-
-Select a food to view its nutritional information.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Facts -->
-
-<div class="card">
-
-<h2>
-💡 Did You Know?
-</h2>
-
-<p id="fact">
-
-Eggs contain all 9 essential amino acids.
-
-</p>
-
-</div>
-
-<a href="diet.html" class="back">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Back to Diet Planner
-
-</a>
-
-</div>
-
-<script src="foods.js"></script>
-
-<script src="nutrition.js"></script>
-
+  <script src="food.js"></script>
+  <script src="nutrition.js"></script>
 </body>
-
 </html>
