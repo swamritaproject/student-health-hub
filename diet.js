@@ -149,9 +149,7 @@ onclick="window.location.href='nutrition.html'">
 
 <p>
 Explore detailed nutrition information for
-<b>60+ common Indian foods</b>, including calories,
-protein, carbohydrates, fats, vitamins,
-minerals and health benefits.
+<b>60+ common Indian foods</b>
 </p>
 
 <div class="exploreBtn">
