@@ -1,0 +1,34 @@
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:20px;
+}
+
+.stat{
+padding:18px;
+border-radius:16px;
+text-align:center;
+color:white;
+font-weight:bold;
+}
+
+.orange{
+background:#ff9800;
+}
+
+.blue{
+background:#2196f3;
+}
+
+.green{
+background:#4caf50;
+}
+
+.purple{
+background:#9c27b0;
+}
+
+.stat h3{
+margin:10px 0 5px;
+}
