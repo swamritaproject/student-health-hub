@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Nutrition Explorer</title>
 
@@ -20,123 +18,116 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <header>
 
+<div class="header-content">
+
 <h1>
-
 <i class="fa-solid fa-bowl-food"></i>
-
 Indian Food Nutrition Explorer
-
 </h1>
 
 <p>
-
-Know the nutritional value of common Indian foods
-
+Search nutritional information for common Indian foods
 </p>
+
+</div>
 
 </header>
 
 <div class="container">
 
+<!-- Search -->
+
 <div class="card">
 
 <h2>
-
 🔍 Search Food
-
 </h2>
 
 <input
 type="text"
 id="search"
-placeholder="Example : Egg, Rice, Chicken..."
+placeholder="Search food..."
 onkeyup="searchFood()">
 
 </div>
 
+<!-- Category -->
+
 <div class="card">
 
 <h2>
-
 📂 Category
-
 </h2>
 
 <select id="category" onchange="filterCategory()">
 
 <option value="all">
-
 All Foods
-
 </option>
 
 <option value="protein">
-
-Protein Foods
-
+🥩 Protein
 </option>
 
 <option value="grain">
-
-Rice & Cereals
-
+🌾 Grains
 </option>
 
 <option value="pulse">
-
-Dal & Pulses
-
+🫘 Pulses
 </option>
 
 <option value="vegetable">
-
-Vegetables
-
+🥬 Vegetables
 </option>
 
 <option value="fruit">
-
-Fruits
-
+🍎 Fruits
 </option>
 
 <option value="dairy">
+🥛 Dairy
+</option>
 
-Milk Products
-
+<option value="nuts">
+🥜 Nuts
 </option>
 
 </select>
 
 </div>
 
+<!-- Food List -->
+
 <div class="card">
 
 <h2>
-
 🍽 Food List
-
 </h2>
 
-<div id="foodList">
+<div id="foodList" class="food-grid">
 
 </div>
 
 </div>
 
-<div class="card" id="details">
+<!-- Nutrition Details -->
+
+<div class="card">
 
 <h2>
-
-📊 Nutrition Information
-
+📊 Nutrition Details
 </h2>
 
 <div id="nutrition">
 
+<div class="empty">
+
+<i class="fa-solid fa-seedling"></i>
+
 <p>
 
-Select any food to view details.
+Select a food to view its nutritional information.
 
 </p>
 
@@ -144,15 +135,35 @@ Select any food to view details.
 
 </div>
 
-<a href="index.html" class="back">
+</div>
+
+<!-- Facts -->
+
+<div class="card">
+
+<h2>
+💡 Did You Know?
+</h2>
+
+<p id="fact">
+
+Eggs contain all 9 essential amino acids.
+
+</p>
+
+</div>
+
+<a href="diet.html" class="back">
 
 <i class="fa-solid fa-arrow-left"></i>
 
-Back to Home
+Back to Diet Planner
 
 </a>
 
 </div>
+
+<script src="foods.js"></script>
 
 <script src="nutrition.js"></script>
 
