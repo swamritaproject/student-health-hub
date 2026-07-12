@@ -1,152 +1,75 @@
 const facts = [
-"🥚 Eggs contain all 9 essential amino acids.",
-"🥛 Milk is an excellent source of calcium.",
-"🍎 Apples are rich in dietary fibre.",
-"🥬 Spinach is rich in iron and folate.",
-"🐟 Fish contains heart-healthy Omega-3 fatty acids.",
-"🫘 Pulses are an excellent plant protein source.",
-"🥜 Nuts provide healthy fats and Vitamin E.",
-"🍌 Bananas are rich in potassium."
+  "🥚 Eggs contain all 9 essential amino acids.",
+  "🥛 Milk is an excellent source of calcium.",
+  "🍎 Apples are rich in dietary fibre.",
+  "🥬 Spinach is rich in iron and folate.",
+  "🐟 Fish contains heart-healthy Omega-3 fatty acids.",
+  "🫘 Pulses are an excellent plant protein source.",
+  "🥜 Nuts provide healthy fats and Vitamin E.",
+  "🍌 Bananas are rich in potassium."
 ];
 
 document.getElementById("fact").innerHTML =
-facts[Math.floor(Math.random()*facts.length)];
+  facts[Math.floor(Math.random() * facts.length)];
 
-function displayFood(list){
+function displayFood(list) {
+  const container = document.getElementById("foodList");
+  container.innerHTML = "";
 
-const container=document.getElementById("foodList");
+  if (list.length === 0) {
+    container.innerHTML = "<p>No food found.</p>";
+    return;
+  }
 
-container.innerHTML="";
-
-if(list.length===0){
-
-container.innerHTML="<p>No food found.</p>";
-
-return;
-
+  list.forEach(food => {
+    container.innerHTML += `
+      <div class="food-card" onclick="showFood('${food.name}')">
+        <h3>${food.emoji}</h3>
+        <b>${food.name}</b>
+        <p>${food.category.toUpperCase()}</p>
+      </div>
+    `;
+  });
 }
 
-list.forEach(food=>{
+function showFood(name) {
+  const food = foods.find(f => f.name === name);
 
-container.innerHTML+=`
+  document.getElementById("nutrition").innerHTML = `
+    <h2>${food.emoji} ${food.name}</h2>
 
-<div class="food-card"
-onclick="showFood('${food.name}')">
+    <table>
+      <tr><th>Nutrient</th><th>Per 100 g</th></tr>
+      <tr><td>Calories</td><td>${food.calories} kcal</td></tr>
+      <tr><td>Protein</td><td>${food.protein} g</td></tr>
+      <tr><td>Carbohydrates</td><td>${food.carbs} g</td></tr>
+      <tr><td>Fat</td><td>${food.fat} g</td></tr>
+      <tr><td>Fibre</td><td>${food.fibre} g</td></tr>
+      <tr><td>Calcium</td><td>${food.calcium} mg</td></tr>
+      <tr><td>Iron</td><td>${food.iron} mg</td></tr>
+      <tr><td>Water</td><td>${food.water}%</td></tr>
+    </table>
 
-<h3>${food.emoji}</h3>
-
-<b>${food.name}</b>
-
-<p>${food.category.toUpperCase()}</p>
-
-</div>
-
-`;
-
-});
-
+    <h3 style="margin-top:20px">💚 Health Benefits</h3>
+    <p>${food.benefits}</p>
+  `;
 }
 
-function showFood(name){
+function searchFood() {
+  const q = document.getElementById("search").value.toLowerCase();
+  const c = document.getElementById("category").value;
 
-const food=foods.find(f=>f.name===name);
+  const filtered = foods.filter(food => {
+    const matchName = food.name.toLowerCase().includes(q);
+    const matchCategory = c === "all" || food.category === c;
+    return matchName && matchCategory;
+  });
 
-document.getElementById("nutrition").innerHTML=`
-
-<h2>${food.emoji} ${food.name}</h2>
-
-<table>
-
-<tr>
-<th>Nutrient</th>
-<th>Per 100 g</th>
-</tr>
-
-<tr>
-<td>Calories</td>
-<td>${food.calories} kcal</td>
-</tr>
-
-<tr>
-<td>Protein</td>
-<td>${food.protein} g</td>
-</tr>
-
-<tr>
-<td>Carbohydrates</td>
-<td>${food.carbs} g</td>
-</tr>
-
-<tr>
-<td>Fat</td>
-<td>${food.fat} g</td>
-</tr>
-
-<tr>
-<td>Fibre</td>
-<td>${food.fibre} g</td>
-</tr>
-
-<tr>
-<td>Calcium</td>
-<td>${food.calcium} mg</td>
-</tr>
-
-<tr>
-<td>Iron</td>
-<td>${food.iron} mg</td>
-</tr>
-
-<tr>
-<td>Water</td>
-<td>${food.water}%</td>
-</tr>
-
-</table>
-
-<h3 style="margin-top:20px">
-💚 Health Benefits
-</h3>
-
-<p>${food.benefits}</p>
-
-`;
-
+  displayFood(filtered);
 }
 
-function searchFood(){
-
-const q=document
-.getElementById("search")
-.value
-.toLowerCase();
-
-const c=document
-.getElementById("category")
-.value;
-
-let filtered=foods.filter(food=>{
-
-const matchName=food.name
-.toLowerCase()
-.includes(q);
-
-const matchCategory=
-c==="all" ||
-food.category===c;
-
-return matchName && matchCategory;
-
-});
-
-displayFood(filtered);
-
-}
-
-function filterCategory(){
-
-searchFood();
-
+function filterCategory() {
+  searchFood();
 }
 
 displayFood(foods);
