@@ -1,204 +1,136 @@
-/* Food Grid */
+/* ---------- Food Grid ---------- */
 
-.food-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-gap:15px;
-margin-top:15px;
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: var(--space-sm);
 }
 
-/* Food Card */
+/* ---------- Food Card ---------- */
 
-.food-card{
-
-background:#fff;
-
-border-radius:18px;
-
-padding:18px;
-
-text-align:center;
-
-cursor:pointer;
-
-border:2px solid #e3f2fd;
-
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-transition:.3s;
-
+.food-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #e3f2fd;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.food-card:hover{
-
-transform:translateY(-5px);
-
-border-color:#26c6da;
-
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-
+.food-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
 }
 
-.food-card h3{
-
-font-size:40px;
-
-margin-bottom:10px;
-
+.food-card h3 {
+  font-size: 36px;
+  margin-bottom: 8px;
 }
 
-.food-card b{
-
-display:block;
-
-font-size:15px;
-
-margin-bottom:6px;
-
+.food-card b {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
-.food-card p{
-
-font-size:13px;
-
-color:#666;
-
-font-weight:normal;
-
+.food-card p {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
-/* Nutrition Table */
+/* ---------- Nutrition Table ---------- */
 
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:18px;
-
-overflow:hidden;
-
-border-radius:12px;
-
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-sm);
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
-th{
-
-background:linear-gradient(135deg,#1976d2,#26c6da);
-
-color:white;
-
-padding:12px;
-
+th {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  padding: 12px;
+  font-weight: 600;
+  text-align: left;
 }
 
-td{
-
-padding:12px;
-
-border-bottom:1px solid #eee;
-
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
 }
 
-tr:nth-child(even){
-
-background:#f8fbff;
-
+tr:nth-child(even) {
+  background: #f8fbff;
 }
 
-/* Empty State */
+/* ---------- Empty State ---------- */
 
-.empty{
-
-text-align:center;
-
-padding:35px 20px;
-
-color:#777;
-
+.empty {
+  text-align: center;
+  padding: 35px 20px;
+  color: #999;
 }
 
-.empty i{
-
-font-size:60px;
-
-color:#4caf50;
-
-margin-bottom:15px;
-
-display:block;
-
+.empty i {
+  font-size: 52px;
+  color: #4caf50;
+  margin-bottom: 12px;
+  display: block;
 }
 
-/* Health Benefits */
+/* ---------- Health Benefits List ---------- */
 
-ul{
-
-margin-top:18px;
-
-padding-left:20px;
-
+ul {
+  margin-top: var(--space-sm);
+  padding-left: 20px;
 }
 
-li{
-
-margin-bottom:8px;
-
-line-height:1.5;
-
+li {
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
-/* Fact Card */
+/* ---------- Fact Card ---------- */
 
-#fact{
-
-font-size:16px;
-
-line-height:1.6;
-
-color:#444;
-
-font-weight:500;
-
+#fact {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  font-weight: 500;
 }
 
-/* Search Animation */
+/* ---------- Entry Animation ---------- */
 
 .food-card,
 table,
-.card{
-
-animation:fade .35s ease;
-
+.card {
+  animation: fade 0.35s ease;
 }
 
-/* Mobile */
+/* ---------- Mobile ---------- */
 
-@media(max-width:700px){
+@media (max-width: 700px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.food-grid{
+  .food-card {
+    padding: 14px;
+  }
 
-grid-template-columns:repeat(2,1fr);
+  .food-card h3 {
+    font-size: 30px;
+  }
 
-}
-
-.food-card{
-
-padding:15px;
-
-}
-
-.food-card h3{
-
-font-size:34px;
-
-}
-
-table{
-
-font-size:14px;
-
-}
-
+  table {
+    font-size: 13px;
+  }
 }
