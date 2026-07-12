@@ -1,5 +1,158 @@
-/* Student Health Hub style.css */
+/* Student Health Hub — style.css */
 
-.dashboard{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;padding:18px;}
-.tile{background:linear-gradient(145deg,#fff,#f4f9ff);border-radius:20px;padding:22px;text-align:center;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:.35s;position:relative;overflow:hidden;animation:fade .5s;}
-.tile::before{content:'';position:absolute;top:0;left:0;width:100%;height:6px;border-radius:20px 20px 0 0}.tile:nth-child(1)::before{background:linear-gradient(90deg,#42a5f5,#1976d2)}.tile:nth-child(2)::before{background:linear-gradient(90deg,#26c6da,#00bfa5)}.tile:nth-child(3)::before{background:linear-gradient(90deg,#ab47bc,#7b1fa2)}.tile:nth-child(4)::before{background:linear-gradient(90deg,#ffa726,#ef6c00)}.tile:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.18)}.tile:active{transform:scale(.96)}.tile i{font-size:36px;margin-bottom:12px;display:block}.tile:nth-child(1) i{color:#1976d2}.tile:nth-child(2) i{color:#00bfa5}.tile:nth-child(3) i{color:#8e24aa}.tile:nth-child(4) i{color:#fb8c00}.tile span{font-size:17px;font-weight:700;color:#263238}.meter{height:18px;background:#e5edf7;border-radius:30px;overflow:hidden;margin-top:18px;box-shadow:inset 0 2px 6px rgba(0,0,0,.08)}#fill{height:100%;width:0;background:linear-gradient(90deg,#4caf50,#81c784);transition:width .6s ease}.card.highlight{box-shadow:0 0 25px #26c6da}.input-label{display:block;font-weight:bold;margin-bottom:8px;color:#1976d2}.fab{position:fixed;bottom:22px;right:22px;width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#00c853,#1976d2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.28);cursor:pointer;z-index:9999;transition:.35s}.fab:hover{transform:scale(1.12) rotate(8deg)}.fab i{color:#fff;font-size:32px}@media(max-width:700px){.dashboard{grid-template-columns:repeat(2,1fr);gap:12px}.tile{padding:18px}.tile i{font-size:30px}.fab{width:62px;height:62px}.fab i{font-size:28px}}
+/* ---------- Dashboard Tiles ---------- */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 18px;
+}
+
+.tile {
+  background: linear-gradient(145deg, #fff, #f4f9ff);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: 0.35s;
+  position: relative;
+  overflow: hidden;
+  animation: fade 0.5s;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.tile:nth-child(1)::before { background: linear-gradient(90deg, #42a5f5, #1976d2); }
+.tile:nth-child(2)::before { background: linear-gradient(90deg, #26c6da, #00bfa5); }
+.tile:nth-child(3)::before { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
+.tile:nth-child(4)::before { background: linear-gradient(90deg, #ffa726, #ef6c00); }
+
+.tile:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.tile:active {
+  transform: scale(0.96);
+}
+
+.tile i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tile:nth-child(1) i { color: #1976d2; }
+.tile:nth-child(2) i { color: #00bfa5; }
+.tile:nth-child(3) i { color: #8e24aa; }
+.tile:nth-child(4) i { color: #fb8c00; }
+
+.tile span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #263238;
+}
+
+/* ---------- Meter (BMI bar) ---------- */
+
+.meter {
+  height: 16px;
+  background: #e5edf7;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 18px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  transition: width 0.6s ease;
+}
+
+/* ---------- Highlight Card ---------- */
+
+.card.highlight {
+  box-shadow: 0 0 25px rgba(38, 198, 218, 0.5);
+}
+
+/* ---------- Input Label ---------- */
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+}
+
+/* ---------- Floating Action Button ---------- */
+
+.fab {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c853, #1976d2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  z-index: 9999;
+  transition: 0.35s;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(8deg);
+}
+
+.fab i,
+.fab span {
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* reserve space so the fab never overlaps the last card's inputs */
+body {
+  padding-bottom: 100px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+  .dashboard {
+    gap: 12px;
+  }
+
+  .tile {
+    padding: 18px;
+  }
+
+  .tile i {
+    font-size: 26px;
+  }
+
+  .fab {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fab i,
+  .fab span {
+    font-size: 24px;
+  }
+}
