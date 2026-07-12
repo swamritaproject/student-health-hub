@@ -1,5 +1,5 @@
 /* ---------- Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 /* ---------- Design Tokens ---------- */
 :root {
@@ -11,11 +11,11 @@
   --color-bg-end: #f3eefc;
 
   --color-surface: rgba(255, 255, 255, 0.72);
-  --color-text: #202733;
-  --color-text-muted: #64707c;
+  --color-text: #1c2430;
+  --color-text-muted: #5b6672;
   --color-border: rgba(210, 220, 235, 0.6);
 
-  --radius-lg: 22px;
+  --radius-lg: 24px;
   --radius-md: 14px;
 
   --shadow-sm: 0 6px 18px rgba(25, 45, 70, 0.08), 0 1px 2px rgba(25,45,70,0.05);
@@ -29,7 +29,7 @@
   --transition: 0.3s cubic-bezier(.4,0,.2,1);
   --transition-fast: 0.18s ease;
 
-  --font-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-heading: "Sora", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
 }
 
@@ -115,8 +115,8 @@ header p {
   font-family: var(--font-heading);
   color: var(--color-primary);
   margin-bottom: 12px;
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -152,7 +152,7 @@ input:focus, select:focus {
 
 input::placeholder { color: #9aa4ad; }
 
-/* ---------- Buttons (with shine sweep) ---------- */
+/* ---------- Buttons ---------- */
 button {
   margin-top: var(--space-sm);
   border: none;
