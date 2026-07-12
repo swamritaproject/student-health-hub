@@ -53,6 +53,11 @@ function showFood(name) {
     <h3 style="margin-top:20px">💚 Health Benefits</h3>
     <p>${food.benefits}</p>
   `;
+
+  document.getElementById("nutrition").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function searchFood() {
