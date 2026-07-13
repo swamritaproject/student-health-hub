@@ -86,6 +86,15 @@ function showPlan() {
       </div>
     </div>
 
+    <div class="nutritionCard gameCard" onclick="window.location.href='myplate.html?group=${group}'">
+      <h2>🎮 My Plate Challenge</h2>
+      <p>Build a full day of meals and see if you hit your <b>daily nutrition goals</b></p>
+      <div class="exploreBtn">
+        Play Now
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+
     <p style="margin-top:18px;color:#666;font-size:14px;">
       <b>Reference:</b> Educational values adapted from ICMR–NIN and WHO dietary guidance.
     </p>
