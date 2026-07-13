@@ -61,8 +61,8 @@ function showPlan() {
       </div>
       <div class="stat green">
         💧
-        <h3>${d.water}</h3>
-        <p>Water</p>
+        <h3>${d.carbs}</h3>
+        <p>Carbohydrates</p>
       </div>
       <div class="stat purple">
         🥑
