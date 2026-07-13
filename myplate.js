@@ -177,6 +177,14 @@ function updateProgress() {
 
 /* ---------- Init ---------- */
 window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  const group = params.get("group");
+
+  if (group && PLATE_TARGETS[group]) {
+    currentGoal = group;
+    document.getElementById("goalGroup").value = group;
+  }
+
   renderFoodPicker();
   renderPlate();
   updateProgress();
