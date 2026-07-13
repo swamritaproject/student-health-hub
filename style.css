@@ -115,14 +115,13 @@
 
 .fab:hover { transform: scale(1.1) rotate(8deg); }
 
-.fab span {
+.fab i {
   color: #fff;
-  font-size: 28px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-1px);
+  font-size: 26px;
+}
+
+@media (max-width: 700px) {
+  .fab i { font-size: 22px; }
 }
 
 /* fab clearance — index page only; overrides theme.css footer padding-bottom
@@ -130,6 +129,47 @@
    correctly-sized 90px instead of 130px+) */
 footer {
   padding-bottom: 90px;
+}
+
+/* ---------- Healthy Tips ---------- */
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+  padding: 0;
+}
+
+.tips-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  color: var(--color-text);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.tips-list li:hover {
+  transform: translateX(4px);
+  background: rgba(255,255,255,0.85);
+}
+
+.tips-list li i {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  font-size: 14px;
 }
 
 /* ---------- Mobile ---------- */
