@@ -105,9 +105,9 @@ function sleepRec() {
   const group = document.getElementById("sleepAge").value;
 
   const recommendations = {
-    child: "9-12 hours",
-    teen: "8-10 hours",
-    adult: "7-9 hours"
+    child: "9-12 hours of sleep is recommended",
+    teen: "8-10 hours of sleep is recommended",
+    adult: "7-9 hours of sleep is recommended"
   };
 
   document.getElementById("sleepOut").innerHTML = recommendations[group];
