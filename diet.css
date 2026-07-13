@@ -127,6 +127,16 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ---------- Game CTA variant ---------- */
+.nutritionCard.gameCard {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #ff9800, #ab47bc);
+}
+
+.nutritionCard.gameCard .exploreBtn {
+  color: #ab47bc;
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 700px) {
