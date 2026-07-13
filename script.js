@@ -19,7 +19,6 @@ function scrollToSection(id) {
 
 function calculateAge() {
   const dob = document.getElementById("dob").value;
-
   if (dob === "") {
     alert("Please select your Date of Birth");
     return;
@@ -34,7 +33,8 @@ function calculateAge() {
 
   if (days < 0) {
     months--;
-    days += 30;
+    const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += prevMonth.getDate();
   }
 
   if (months < 0) {
@@ -78,7 +78,7 @@ function water() {
   if (!w) return alert("Enter weight");
 
   document.getElementById("waterOut").innerHTML =
-    `Drink atleast ${(w * 35 / 1000).toFixed(1)} litres/day`;
+    `Drink atleast ${(w * 39 / 1000).toFixed(1)} litres/day`;
 }
 
 /* ---------- Sleep Recommendation ---------- */
@@ -105,10 +105,12 @@ function calories() {
 
   if (!a || !w || !h) return alert("Fill all fields");
 
-  const b = (gender === "Male")
+  const bmr = (gender === "Male")
     ? (10 * w + 6.25 * h - 5 * a + 5)
     : (10 * w + 6.25 * h - 5 * a - 161);
 
+  const tdee = bmr * 1.4; // light activity average
+
   document.getElementById("calOut").innerHTML =
-    `Estimated Calories: ${Math.round(b)} kcal/day`;
+    `Estimated Calories: ${Math.round(tdee)} kcal/day`;
 }
