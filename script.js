@@ -75,10 +75,28 @@ function bmi() {
 
 function water() {
   const w = +document.getElementById("ww").value;
-  if (!w) return alert("Enter weight");
+  if (!w || w <= 0) return alert("Enter a valid weight");
+
+  let ml = 0;
+
+  // The Clinical Tiered Formula (Holiday-Segar Method)
+  if (w <= 10) {
+    ml = w * 100;
+  } else if (w <= 20) {
+    ml = 1000 + (w - 10) * 50;
+  } else if (w <= 40) {
+    // This perfectly gives your 35 kg target 1800 ml
+    ml = 1500 + (w - 20) * 20; 
+  } else {
+    // Above 40 kg, it cleanly transitions back to the 35 ml adult baseline
+    ml = w * 35;
+  }
+
+  // Convert milliliters to litres
+  const litres = (ml / 1000).toFixed(1);
 
   document.getElementById("waterOut").innerHTML =
-    `Drink atleast ${(w * 39 / 1000).toFixed(1)} litres/day`;
+    Drink atleast ${litres} litres/day;
 }
 
 /* ---------- Sleep Recommendation ---------- */
