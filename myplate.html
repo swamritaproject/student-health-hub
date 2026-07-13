@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Plate Challenge</title>
+
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="myplate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-utensils"></i> My Plate Challenge</h1>
+    <p>Build your day. Hit your goals.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Choose Your Goal</h2>
+      <select id="goalGroup" onchange="setGoal()">
+        <option value="child">👦 Children (4–10 Years)</option>
+        <option value="teen" selected>🧒 Teen (11–18 Years)</option>
+        <option value="male">👨 Adult Male</option>
+        <option value="female">👩 Adult Female</option>
+        <option value="senior">🧓 Senior Citizen</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title"><i class="fa-solid fa-magnifying-glass"></i> Add Foods</h2>
+      <input type="text" id="plateSearch" placeholder="Search food..." onkeyup="renderFoodPicker()">
+      <select id="plateCategory" onchange="renderFoodPicker()">
+        <option value="all">All Categories</option>
+        <option value="protein">🥩 Protein</option>
+        <option value="grain">🌾 Grains</option>
+        <option value="pulse">🫘 Pulses</option>
+        <option value="vegetable">🥬 Vegetables</option>
+        <option value="fruit">🍎 Fruits</option>
+        <option value="dairy">🥛 Dairy</option>
+        <option value="nuts">🥜 Nuts</option>
+      </select>
+      <div id="foodPicker" class="picker-grid"></div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title"><i class="fa-solid fa-plate-wheat"></i> Your Plate Today</h2>
+      <div id="plateList" class="plate-list"></div>
+      <button class="reset-btn" onclick="resetPlate()">
+        <i class="fa-solid fa-rotate-left"></i> Reset Day
+      </button>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Your Progress</h2>
+      <div id="progressBars" class="progress-wrap"></div>
+      <div id="finalMessage" class="final-message"></div>
+    </div>
+
+  </div>
+
+  <footer>Developed by Swamrita</footer>
+
+  <script src="foods.js"></script>
+  <script src="myplate.js"></script>
+</body>
+</html>
