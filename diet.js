@@ -49,27 +49,30 @@ function showPlan() {
     <h2 class="section-title">📊 Daily Nutrition</h2>
 
     <div class="stats">
-      <div class="stat orange">
-        🔥
-        <h3>${d.calories}</h3>
-        <p>Calories</p>
-      </div>
-      <div class="stat blue">
-        💪
-        <h3>${d.protein}</h3>
-        <p>Protein</p>
-      </div>
-      <div class="stat green">
-        🍞
-        <h3>${d.carbs}</h3>
-        <p>Carbohydrates</p>
-      </div>
-      <div class="stat purple">
-        🥑
-        <h3>${d.fat}</h3>
-        <p>Fat</p>
-      </div>
-    </div>
+  <div class="stat orange">
+    <i class="fa-solid fa-fire-flame-curved stat-icon"></i>
+    <h3>${d.calories}</h3>
+    <p>Calories</p>
+  </div>
+
+  <div class="stat blue">
+    <i class="fa-solid fa-dumbbell stat-icon"></i>
+    <h3>${d.protein}</h3>
+    <p>Protein</p>
+  </div>
+
+  <div class="stat green">
+    <i class="fa-solid fa-wheat-awn stat-icon"></i>
+    <h3>${d.carbs}</h3>
+    <p>Carbohydrates</p>
+  </div>
+
+  <div class="stat purple">
+    <i class="fa-solid fa-droplet stat-icon"></i>
+    <h3>${d.fat}</h3>
+    <p>Fat</p>
+  </div>
+</div>
 
     <h2 class="section-title">🥗 Recommended Foods</h2>
 
