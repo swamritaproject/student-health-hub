@@ -118,14 +118,9 @@
   transform: scale(1.1) rotate(8deg);
 }
 
-.fab i,
-.fab img,
-.fab svg {
-  font-size: 26px;
-  color: #fff;
+.fab span {
+  font-size: 28px;
   line-height: 1;
-  margin: 0;
-  display: block;
 }
 
 /* ---------- Healthy Tips ---------- */
