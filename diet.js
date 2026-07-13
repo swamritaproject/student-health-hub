@@ -1,41 +1,41 @@
 const plans = {
   child: {
-    calories: "1450 kcal",
-    protein: "30 g",
-    carbs: "231 g",
-    fat: "45 g",
-    water: "1.5–2 L",
-    foods: ["🥛 Milk", "🍎 Apple", "🥚 Egg", "🥬 Spinach", "🍚 Rice", "🫘 Moong Dal"]
-  },
+  calories: "1200–1700 kcal",
+  protein: "30 g",
+  carbs: "195 g",
+  fat: "40 g",
+  water: "1.5–2 L",
+  foods: ["🥛 Milk", "🍎 Apple", "🥚 Egg", "🥬 Spinach", "🍚 Rice", "🫘 Moong Dal"]
+ },
   teen: {
-    calories: "2200 kcal",
-    protein: "55 g",
-    carbs: "360 g",
+    calories: "2000–2400 kcal",
+    protein: "65 g",
+    carbs: "300 g",
     fat: "60 g",
     water: "2–3 L",
     foods: ["🍗 Chicken", "🍌 Banana", "🥛 Milk", "🍚 Rice", "🥚 Egg", "🫘 Dal"]
   },
   male: {
-    calories: "2700 kcal",
+    calories: "2400–3000 kcal",
     protein: "70 g",
-    carbs: "420 g",
-    fat: "82 g",
-    water: "3–3.7 L",
+    carbs: "400 g",
+    fat: "80 g",
+    water: "3.7 L",
     foods: ["🐟 Fish", "🍗 Chicken", "🥚 Eggs", "🥜 Nuts", "🥦 Broccoli", "🍚 Rice"]
   },
   female: {
-    calories: "2100 kcal",
+    calories: "1800–2400 kcal",
     protein: "58 g",
-    carbs: "314 g",
-    fat: "68 g",
-    water: "2.5–2.7 L",
+    carbs: "300 g",
+    fat: "65 g",
+    water: "2.7 L",
     foods: ["🥬 Spinach", "🍎 Apple", "🥛 Yogurt", "🫘 Beans", "🥚 Egg", "🍚 Rice"]
   },
   senior: {
-    calories: "1950 kcal",
+    calories: "1700–2200 kcal",
     protein: "60 g",
-    carbs: "297 g",
-    fat: "58 g",
+    carbs: "250 g",
+    fat: "55 g",
     water: "2.5–3 L",
     foods: ["🍲 Vegetable Soup", "🥛 Milk", "🍌 Banana", "🥬 Vegetables", "🫘 Dal", "🍎 Apple"]
   }
