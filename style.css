@@ -107,10 +107,8 @@
   box-shadow: var(--shadow-lg);
   cursor: pointer;
   z-index: 9999;
-  overflow: hidden;
   transition: transform var(--transition);
 
-  /* centering */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,10 +118,14 @@
   transform: scale(1.1) rotate(8deg);
 }
 
-.fab i {
+.fab i,
+.fab img,
+.fab svg {
   font-size: 26px;
   color: #fff;
   line-height: 1;
+  margin: 0;
+  display: block;
 }
 
 /* ---------- Healthy Tips ---------- */
