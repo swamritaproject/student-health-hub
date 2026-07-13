@@ -111,35 +111,40 @@
 }
 
 .fab:hover {
-  transform: scale(1.1) rotate(90deg);
+  transform: scale(1.1) rotate(8deg);
 }
 
-.fab::before,
+/* Fork (left prong bar) */
+.fab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  width: 3px;
+  height: 26px;
+  background: #fff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  box-shadow: -6px 0 0 #fff, 6px 0 0 #fff;
+}
+
+/* Knife (right blade bar) */
 .fab::after {
   content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  background: #fff;
-  border-radius: 2px;
-}
-
-.fab::before {
-  width: 26px;
-  height: 4px;
-  transform: translate(-50%, -50%);
-}
-
-.fab::after {
+  left: 62%;
   width: 4px;
   height: 26px;
+  background: #fff;
+  border-radius: 2px 2px 0 0;
   transform: translate(-50%, -50%);
 }
 
 @media (max-width: 700px) {
   .fab { width: 56px; height: 56px; }
-  .fab::before { width: 22px; height: 3.5px; }
-  .fab::after { width: 3.5px; height: 22px; }
+  .fab::before { height: 22px; box-shadow: -5px 0 0 #fff, 5px 0 0 #fff; }
+  .fab::after { height: 22px; }
 }
 
 /* ---------- Healthy Tips ---------- */
