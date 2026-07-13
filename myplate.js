@@ -1,10 +1,10 @@
 /* ---------- Daily Nutrition Targets (midpoint of diet.js ranges) ---------- */
 const PLATE_TARGETS = {
-  child:  { calories: 1450, protein: 30, carbs: 210, fat: 45 },
-  teen:   { calories: 2200, protein: 55, carbs: 330, fat: 60 },
-  male:   { calories: 2700, protein: 70, carbs: 380, fat: 82 },
-  female: { calories: 2100, protein: 58, carbs: 295, fat: 68 },
-  senior: { calories: 1950, protein: 60, carbs: 260, fat: 58 }
+  child:  { calories: 1400, protein: 35, carbs: 180, fat: 40 },
+  teen:   { calories: 2200, protein: 65, carbs: 285, fat: 60 },
+  male:   { calories: 2600, protein: 75, carbs: 340, fat: 80 },
+  female: { calories: 2000, protein: 60, carbs: 260, fat: 60 },
+  senior: { calories: 1800, protein: 65, carbs: 225, fat: 50 }
 };
 
 const MET_THRESHOLD = 0.9; // reaching 90% of target counts as "met"
