@@ -136,6 +136,12 @@
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 700px) {
+  .fab { width: 56px; height: 56px; }
+  .fab::before { width: 22px; height: 3.5px; }
+  .fab::after { width: 3.5px; height: 22px; }
+}
+
 /* ---------- Healthy Tips ---------- */
 .tips-list {
   list-style: none;
