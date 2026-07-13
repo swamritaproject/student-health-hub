@@ -137,6 +137,23 @@
   color: #ab47bc;
 }
 
+/* ---------- Icons ---------- */
+.stat-icon{
+  font-size:34px;
+  margin-bottom:10px;
+  opacity:.95;
+}
+
+.stat h3{
+  margin:8px 0 4px;
+  font-size:22px;
+}
+
+.stat p{
+  margin:0;
+  font-size:13px;
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 700px) {
