@@ -60,7 +60,7 @@ function showPlan() {
         <p>Protein</p>
       </div>
       <div class="stat green">
-        💧
+        🍞
         <h3>${d.carbs}</h3>
         <p>Carbohydrates</p>
       </div>
