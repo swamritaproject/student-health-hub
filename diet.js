@@ -1,12 +1,12 @@
 const plans = {
   child: {
-    calories: "1200–1700 kcal",
-    protein: "60 g",
-    carbs: "175 g",
-    fat: "40 g",
-    water: "1.5–2 L",
-    foods: ["🥛 Milk", "🍎 Apple", "🥚 Egg", "🥬 Spinach", "🍚 Rice", "🫘 Moong Dal"]
-  },
+  calories: "1200–1700 kcal",
+  protein: "30 g",
+  carbs: "195 g",
+  fat: "40 g",
+  water: "1.5–2 L",
+  foods: ["🥛 Milk", "🍎 Apple", "🥚 Egg", "🥬 Spinach", "🍚 Rice", "🫘 Moong Dal"]
+ },
   teen: {
     calories: "2000–2400 kcal",
     protein: "65 g",
