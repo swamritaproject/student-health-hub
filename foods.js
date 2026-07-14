@@ -3,16 +3,17 @@ const foods = [
   { name: "Chicken Breast (100g)", category: "protein", emoji: "🍗", calories: 165, protein: 31, carbs: 0, fat: 3.6, fibre: 0, calcium: 15, iron: 1, water: 65, benefits: "Lean protein, Muscle growth" },
   { name: "Fish - Rohu (100g)", category: "protein", emoji: "🐟", calories: 97, protein: 17, carbs: 0, fat: 2, fibre: 0, calcium: 30, iron: 1.1, water: 79, benefits: "Rich in Omega-3 fatty acids" },
   { name: "Mutton (100g)", category: "protein", emoji: "🥩", calories: 294, protein: 25, carbs: 0, fat: 21, fibre: 0, calcium: 18, iron: 2.7, water: 58, benefits: "Rich in Iron and Vitamin B12" },
-  { name: "Soybean (100g)", category: "protein", emoji: "🫘", calories: 446, protein: 36, carbs: 30, fat: 20, fibre: 9, calcium: 277, iron: 15.7, water: 9, benefits: "Excellent plant protein" },
-  { name: "Soy Chunks (100g)", category: "protein", emoji: "🧆", calories: 345, protein: 52, carbs: 33, fat: 0.5, fibre: 13, calcium: 350, iron: 9.5, water: 8, benefits: "Very high protein food" },
+  { name: "Soybean Boiled (100g)", category: "protein", emoji: "🫘", calories: 446, protein: 17.5, carbs: 30, fat: 20, fibre: 9, calcium: 277, iron: 15.7, water: 9, benefits: "Excellent plant protein" },
   { name: "Prawns (100g)", category: "protein", emoji: "🦐", calories: 99, protein: 24, carbs: 0.2, fat: 0.3, fibre: 0, calcium: 70, iron: 0.5, water: 76, benefits: "Low fat, high protein, selenium" },
   { name: "Tofu (100g)", category: "protein", emoji: "🧈", calories: 76, protein: 8, carbs: 1.9, fat: 4.8, fibre: 0.3, calcium: 350, iron: 5.4, water: 85, benefits: "Plant-based protein, isoflavones" },
 
   { name: "Milk (1 cup, ~240ml)", category: "dairy", emoji: "🥛", calories: 146, protein: 7.7, carbs: 12, fat: 7.9, fibre: 0, calcium: 288, iron: 0, water: 211, benefits: "Excellent source of calcium" },
-  { name: "Curd (1 bowl, ~150g)", category: "dairy", emoji: "🥣", calories: 147, protein: 16.5, carbs: 5.1, fat: 6.5, fibre: 0, calcium: 181, iron: 0.3, water: 128, benefits: "Contains probiotics" },
+  { name: "Curd (1 bowl, ~150g)", category: "dairy", emoji: "🥣", calories: 147, protein: 5.3, carbs: 5.1, fat: 6.5, fibre: 0, calcium: 181, iron: 0.3, water: 128, benefits: "Contains probiotics" },
   { name: "Paneer (100g)", category: "dairy", emoji: "🧀", calories: 265, protein: 18, carbs: 1.2, fat: 20, fibre: 0, calcium: 208, iron: 0.5, water: 55, benefits: "High protein and calcium" },
   { name: "Cheese (1 slice, ~20g)", category: "dairy", emoji: "🧀", calories: 80, protein: 5, carbs: 0.3, fat: 6.6, fibre: 0, calcium: 144, iron: 0.1, water: 7, benefits: "Very high calcium content" },
+  { name: "Ghee (1 tsp, ~5g)", category: "dairy", emoji: "🧈", calories: 45, protein: 0, carbs: 0, fat: 5, fibre: 0, calcium: 0, iron: 0, water: 0, benefits: "Fat-soluble vitamins A, D, E, K" },
 
+  { name: "Sattu (2 tbsp, ~30g)", category: "pulse", emoji: "🌾", calories: 107, protein: 6.5, carbs: 17, fat: 1.6, fibre: 3.6, calcium: 33, iron: 1.6, water: 2, benefits: "High protein energy drink base" },
   { name: "Rice - cooked (1 cup, ~150g)", category: "grain", emoji: "🍚", calories: 195, protein: 4, carbs: 42, fat: 0.4, fibre: 0.6, calcium: 15, iron: 0.3, water: 102, benefits: "Quick energy source" },
   { name: "Brown Rice - cooked (1 cup, ~150g)", category: "grain", emoji: "🌾", calories: 166, protein: 3.9, carbs: 34, fat: 1.3, fibre: 2.7, calcium: 15, iron: 0.6, water: 105, benefits: "High fibre grain" },
   { name: "Puffed Rice/Muri (1 cup, ~30g)", category: "grain", emoji: "🥣", calories: 121, protein: 1.8, carbs: 27, fat: 0.15, fibre: 0.5, calcium: 5, iron: 0.9, water: 1, benefits: "Light energy snack" },
@@ -29,7 +30,7 @@ const foods = [
   { name: "Toor Dal - cooked (1 bowl, ~150g)", category: "pulse", emoji: "🫘", calories: 149, protein: 9.5, carbs: 26, fat: 0.6, fibre: 6, calcium: 22, iron: 1.9, water: 105, benefits: "Rich in protein" },
   { name: "Chana Dal - cooked (1 bowl, ~150g)", category: "pulse", emoji: "🫘", calories: 168, protein: 9, carbs: 28, fat: 2.5, fibre: 7, calcium: 18, iron: 1.6, water: 100, benefits: "High fibre pulse" },
   { name: "Rajma - cooked (1 bowl, ~150g)", category: "pulse", emoji: "🫘", calories: 140, protein: 9, carbs: 25, fat: 0.4, fibre: 10, calcium: 25, iron: 1.8, water: 105, benefits: "Supports heart health" },
-  { name: "Kabuli Chana - cooked (1 bowl, ~150g)", category: "pulse", emoji: "🧆", calories: 164, protein: 8.9, carbs: 27, fat: 2.6, fibre: 7.5, calcium: 20, iron: 2.1, water: 100, benefits: "Rich in protein and fibre" },
+  { name: "Kabuli Chana - cooked (1 bowl, ~150g)", category: "pulse", emoji: "🧆", calories: 246, protein: 13.3, carbs: 41, fat: 3.9, fibre: 11.4, calcium: 30, iron: 3.2, water: 100, benefits: "Rich in protein and fibre" },
   { name: "Green Peas (1 cup, ~100g)", category: "pulse", emoji: "🟢", calories: 81, protein: 5.4, carbs: 14, fat: 0.4, fibre: 5.7, calcium: 25, iron: 1.5, water: 79, benefits: "Rich in vitamins and fibre" },
   { name: "Lentil Sprouts (100g)", category: "pulse", emoji: "🌱", calories: 106, protein: 9, carbs: 19, fat: 0.6, fibre: 8, calcium: 21, iron: 3.3, water: 67, benefits: "Easy to digest, high fibre" },
 
@@ -41,7 +42,7 @@ const foods = [
   { name: "Chia Seeds (1 tbsp, ~12g)", category: "nuts", emoji: "⚪", calories: 58, protein: 2, carbs: 5, fat: 3.7, fibre: 4.1, calcium: 76, iron: 0.9, water: 0.7, benefits: "Extremely high fibre and Omega-3" },
   { name: "Flax Seeds (1 tbsp, ~10g)", category: "nuts", emoji: "🟤", calories: 53, protein: 1.8, carbs: 2.9, fat: 4.2, fibre: 2.7, calcium: 26, iron: 0.6, water: 0.7, benefits: "Rich in lignans and Omega-3" },
 
-  { name: "Spinach - cooked (1 cup, ~180g)", category: "vegetable", emoji: "🥬", calories: 41, protein: 5.2, carbs: 6.5, fat: 0.7, fibre: 4, calcium: 178, iron: 4.9, water: 164, benefits: "Rich in iron and folate" },
+  { name: "Spinach - cooked (1 cup, ~180g)", category: "vegetable", emoji: "🥬", calories: 41, protein: 5.2, carbs: 6.5, fat: 0.7, fibre: 5.2, calcium: 245, iron: 6.5, water: 164, benefits: "Rich in iron and folate" },  
   { name: "Potato - boiled (1 medium, ~150g)", category: "vegetable", emoji: "🥔", calories: 116, protein: 3, carbs: 26, fat: 0.15, fibre: 3.3, calcium: 18, iron: 1.2, water: 119, benefits: "Good source of energy" },
   { name: "Tomato (1 medium, ~120g)", category: "vegetable", emoji: "🍅", calories: 22, protein: 1.1, carbs: 4.7, fat: 0.2, fibre: 1.4, calcium: 12, iron: 0.4, water: 114, benefits: "Rich in lycopene" },
   { name: "Carrot (1 medium, ~60g)", category: "vegetable", emoji: "🥕", calories: 25, protein: 0.5, carbs: 6, fat: 0.1, fibre: 1.7, calcium: 20, iron: 0.2, water: 53, benefits: "Excellent source of Vitamin A" },
@@ -49,7 +50,7 @@ const foods = [
   { name: "Cauliflower - cooked (1 cup, ~155g)", category: "vegetable", emoji: "🥦", calories: 39, protein: 2.9, carbs: 7.8, fat: 0.5, fibre: 3.1, calcium: 34, iron: 0.6, water: 143, benefits: "Rich in Vitamin C" },
   { name: "Beetroot (1 medium, ~100g)", category: "vegetable", emoji: "🫜", calories: 43, protein: 1.6, carbs: 10, fat: 0.2, fibre: 2.8, calcium: 16, iron: 0.8, water: 88, benefits: "Rich in folate" },
   { name: "Broccoli - cooked (1 cup, ~156g)", category: "vegetable", emoji: "🥦", calories: 53, protein: 4.4, carbs: 11, fat: 0.6, fibre: 4, calcium: 73, iron: 1.1, water: 139, benefits: "High Vitamin C and K" },
-  { name: "Pumpkin - cooked (1 cup, ~245g)", category: "vegetable", emoji: "🎃", calories: 64, protein: 2.5, carbs: 16, fat: 0.25, fibre: 1.2, calcium: 51, iron: 2, water: 226, benefits: "Rich in Vitamin A" },
+  { name: "Pumpkin - cooked (1 cup, ~245g)", category: "vegetable", emoji: "🎃", calories: 49, protein: 1.8, carbs: 12, fat: 0.2, fibre: 3, calcium: 37, iron: 1.4, water: 231, benefits: "Rich in Vitamin A" },
   { name: "Bottle Gourd/Lauki (1 cup, ~150g)", category: "vegetable", emoji: "🥒", calories: 21, protein: 0.9, carbs: 5.1, fat: 0.03, fibre: 0.75, calcium: 39, iron: 0.3, water: 144, benefits: "Low calorie, hydrating" },
 
   { name: "Apple (1 medium, ~180g)", category: "fruit", emoji: "🍎", calories: 94, protein: 0.5, carbs: 25, fat: 0.3, fibre: 4.3, calcium: 11, iron: 0.2, water: 155, benefits: "Rich in fibre and Vitamin C" },
