@@ -54,7 +54,7 @@ function showFood(name) {
     <p>${food.benefits}</p>
 
     <button class="search-another" onclick="scrollToSearch()">
-      <i class="fa-solid fa-arrow-up"></i> Search Another
+      <i class="fa-solid fa-magnifying-glass"></i> Search Another
     </button>
   `;
 
