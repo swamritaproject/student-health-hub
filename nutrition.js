@@ -71,6 +71,7 @@ function scrollToSearch() {
   });
   document.getElementById("search").focus();
 }
+
 function searchFood() {
   const q = document.getElementById("search").value.toLowerCase();
   const c = document.getElementById("category").value;
