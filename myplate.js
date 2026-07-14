@@ -242,4 +242,5 @@ window.onload = function () {
   renderFoodPicker();
   renderPlate();
   updateProgress();
+  updateFabState();
 };
