@@ -183,6 +183,52 @@ function scrollToPlate() {
   });
 }
 
+/* ---------- FAB Toggle Logic ---------- */
+let fabState = "down"; // "down" = scroll to plate, "up" = scroll to add food
+
+function updateFabState() {
+  const plateSection = document.getElementById("yourPlate");
+  const rect = plateSection.getBoundingClientRect();
+  const fabIcon = document.querySelector(".fab i");
+
+  // If the top of "Your Plate" section is above the viewport middle,
+  // we're past it — so switch to "up" mode
+  const inOrPastPlate = rect.top < window.innerHeight * 0.4;
+
+  if (inOrPastPlate && fabState !== "up") {
+    fabState = "up";
+    fabIcon.className = "fa-solid fa-arrow-up";
+  } else if (!inOrPastPlate && fabState !== "down") {
+    fabState = "down";
+    fabIcon.className = "fa-solid fa-arrow-down";
+  }
+}
+
+function handleFabClick() {
+  if (fabState === "down") {
+    scrollToPlate();
+  } else {
+    scrollToAddFood();
+  }
+}
+
+function scrollToPlate() {
+  document.getElementById("yourPlate").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function scrollToAddFood() {
+  // Target the "Add Foods" card — give it an id if it doesn't have one
+  document.getElementById("addFoodSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+window.addEventListener("scroll", updateFabState);
+
 /* ---------- Init ---------- */
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
