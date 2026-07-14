@@ -29,7 +29,7 @@
       </select>
     </div>
 
-    <div class="card">
+    <div class="card" id="addFoodSection">
       <h2 class="section-title"><i class="fa-solid fa-magnifying-glass"></i> Add Foods</h2>
       <input type="text" id="plateSearch" placeholder="Search food..." onkeyup="renderFoodPicker()">
       <select id="plateCategory" onchange="renderFoodPicker()">
@@ -67,8 +67,8 @@
 
   <footer>Developed by Swamrita</footer>
 
-  <div class="fab" onclick="scrollToPlate()">
-    <i class="fa-solid fa-arrow-down"></i>
+  <div class="fab" onclick="handleFabClick()">
+     <i class="fa-solid fa-arrow-down"></i>
   </div>
 
   <script src="foods.js"></script>
