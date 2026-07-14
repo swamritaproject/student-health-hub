@@ -175,6 +175,14 @@ function updateProgress() {
        <p>${metCount} of ${macros.length} goals met so far — keep adding foods!</p>`;
 }
 
+/* ---------- Scroll to Plate ---------- */
+function scrollToPlate() {
+  document.getElementById("yourPlate").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
 /* ---------- Init ---------- */
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
