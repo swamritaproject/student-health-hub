@@ -52,6 +52,10 @@ function showFood(name) {
 
     <h3 style="margin-top:20px">💚 Health Benefits</h3>
     <p>${food.benefits}</p>
+
+    <button class="search-another" onclick="scrollToSearch()">
+      <i class="fa-solid fa-arrow-up"></i> Search Another
+    </button>
   `;
 
   document.getElementById("nutrition").scrollIntoView({
@@ -60,6 +64,13 @@ function showFood(name) {
   });
 }
 
+function scrollToSearch() {
+  document.getElementById("searchSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+  document.getElementById("search").focus();
+}
 function searchFood() {
   const q = document.getElementById("search").value.toLowerCase();
   const c = document.getElementById("category").value;
